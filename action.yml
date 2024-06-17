@@ -2,10 +2,13 @@ name: 'loki42-sync-jira-to-github'
 description: 'Synchronizes Jira issues to GitHub repositories'
 inputs:
   from-jira:
-    description: 'Flag to indicate from Jira'
+    description: 'Jira used as a source to synchronize isuses'
     required: true
   to-repo:
     description: 'The destination repository'
+    required: true
+  jql:
+    description: 'JQL used to search for issues to synchronize'
     required: true
 runs:
   using: 'docker'
@@ -13,3 +16,4 @@ runs:
   args:
     - ${{ inputs.from-jira }}
     - ${{ inputs.to-repo }}
+    - ${{ inputs.jql }}
