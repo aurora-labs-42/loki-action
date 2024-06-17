@@ -1,4 +1,4 @@
-name: 'loki-sync-jira-to-github'
+name: 'loki-action-jira-to-github'
 description: 'Synchronizes Jira issues to GitHub repositories'
 inputs:
   from-jira:
