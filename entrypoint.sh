@@ -14,6 +14,6 @@ curl -L -o loki-dist.zip https://github.com/aurora-labs-42/loki/releases/downloa
 unzip loki-dist.zip
 
 # Assuming the JAR file is named loki.jar inside the unzipped directory
-java -jar quarkus-run.jar --from-jira=${JIRA_URL} --to-repo=${TO_REPO} --jql=${JQL}
+java -jar quarkus-run.jar --from-jira=${JIRA_URL} --to-repo=${TO_REPO} --jql="${JQL}"
  
 
