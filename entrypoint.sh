@@ -2,8 +2,9 @@
 
 set -e
 
-FROM_JIRA=$1
+JIRA_URL=$1
 TO_REPO=$2
+JQL=$3
 
 # Get the latest tag from the GitHub releases
 LATEST_TAG=$(curl --silent "https://api.github.com/repos/aurora-labs-42/loki/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
@@ -13,4 +14,6 @@ curl -L -o loki-dist.zip https://github.com/aurora-labs-42/loki/releases/downloa
 unzip loki-dist.zip
 
 # Assuming the JAR file is named loki.jar inside the unzipped directory
-java -jar quarkus-run.jar --from-jira --to-repo=${TO_REPO}
+java -jar quarkus-run.jar --from-jira=${JIRA_URL} --to-repo=${TO_REPO} --jql=${JQL}
+ 
+
