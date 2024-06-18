@@ -12,6 +12,7 @@ To use this action, add the following step to your GitHub Actions workflow:
   with:
     from-jira: "<JIRA_BASE_URL>"
     to-repo: "<GITHUB_REPOSITORY>"
+    labels: "label1,label2"
     jql: "<JIRA_QUERY_LANGUAGE>"
   env:
     GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -22,6 +23,7 @@ To use this action, add the following step to your GitHub Actions workflow:
 
 - **from-jira**: The base URL of your JIRA instance where issues are located. Example: `"<JIRA_BASE_URL>"`
 - **to-repo**: The GitHub repository where the JIRA issues will be synchronized. Example: `"<GITHUB_REPOSITORY>"`
+- **labels**: The GitHub labels applied to the issues synchronized. Example: `"label1,label2"`
 - **jql**: The JIRA Query Language (JQL) statement to filter and find the issues to be synchronized. Example: `"<JIRA_QUERY_LANGUAGE>"`
 
 ### Environment Variables
@@ -57,6 +59,7 @@ jobs:
       with:
         from-jira: "<JIRA_BASE_URL>"
         to-repo: "<GITHUB_REPOSITORY>"
+        labels: "label1,label2"
         jql: "<JIRA_QUERY_LANGUAGE>"
       env:
         GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
