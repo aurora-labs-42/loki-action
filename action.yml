@@ -7,6 +7,9 @@ inputs:
   to-repo:
     description: 'The destination repository'
     required: true
+  labels:
+    description: 'Labels applied to the issue synchronized'
+    required: true
   jql:
     description: 'JQL used to search for issues to synchronize'
     required: true
@@ -16,4 +19,5 @@ runs:
   args:
     - ${{ inputs.from-jira }}
     - ${{ inputs.to-repo }}
+    - ${{ inputs.labels }}
     - ${{ inputs.jql }}
